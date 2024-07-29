@@ -58,7 +58,17 @@ ___
     docker compose exec php bash -c "composer update"
     
 ```
-    5. Выполните миграцию
+    5.Cоздайте файл .env 
+```bash
+touch .env 
+
+```
+    6. Заполните .env содержимым .env.example
+```bash
+cat .env.example > .env
+
+```
+    6. Выполните миграцию
 ```bash
     docker compose exec php bash -c "php artisan migrate"
 ```
