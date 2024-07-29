@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+
+  mysql_db:
+    image: mysql:8.4
+    container_name: mysql_bank
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+      - MYSQL_DATABASE=mysql_db
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=mysql
+
+  php:
+    build:
+      dockerfile: docker/php/Dockerfile
+    container_name: php_bank
+    volumes:
+      - .:/app
+    depends_on:
+        - mysql_db
+  nginx:
+    image: nginx:1.25.0
+    container_name: nginx_bank
+    ports:
+      - 80:80
+    volumes:
+      - .:/app
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+
+
+
+
+

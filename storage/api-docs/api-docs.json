@@ -1,0 +1,549 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Parameter API",
+        "description": "Parameter API",
+        "version": "3.0.0"
+    },
+    "paths": {
+        "/getUpLoadableParameters": {
+            "get": {
+                "tags": [
+                    "GET"
+                ],
+                "summary": "Show parameters id where icon or icon_gray is null",
+                "description": "Get up loadable parameters",
+                "operationId": "749d99f6d6147e143a8083c6e9786223",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "parameter №1": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "OOOm1acm3M"
+                                                    },
+                                                    "type": {
+                                                        "type": "integer",
+                                                        "example": 2
+                                                    },
+                                                    "icon": {
+                                                        "type": "string",
+                                                        "example": null
+                                                    },
+                                                    "icon_gray": {
+                                                        "type": "string",
+                                                        "example": null
+                                                    },
+                                                    "file_icon_name": {
+                                                        "type": "string",
+                                                        "example": null
+                                                    },
+                                                    "file_icon_gray_name": {
+                                                        "type": "string",
+                                                        "example": null
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Not found Exception 404"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getLoadableParameters": {
+            "get": {
+                "tags": [
+                    "GET"
+                ],
+                "summary": "Show parameters where icon is not null",
+                "description": "Get loadable parameters",
+                "operationId": "2e18052784d588b9c242c0917fa582ef",
+                "responses": {
+                    "404": {
+                        "description": "Not found",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Not found Exception 404"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "parameter №1": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "OOOm1acm3M"
+                                                    },
+                                                    "type": {
+                                                        "type": "integer",
+                                                        "example": 2
+                                                    },
+                                                    "icon": {
+                                                        "type": "string",
+                                                        "example": "pictures/fyva_3.jpg"
+                                                    },
+                                                    "icon_gray": {
+                                                        "type": "string",
+                                                        "example": null
+                                                    },
+                                                    "file_icon_name": {
+                                                        "type": "string",
+                                                        "example": "fyva_3.jpg"
+                                                    },
+                                                    "file_icon_gray_name": {
+                                                        "type": "string",
+                                                        "example": null
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/findByIdOrTitle/{key}": {
+            "get": {
+                "tags": [
+                    "GET"
+                ],
+                "summary": "Key can be id or title",
+                "description": "Find parameter by id or title",
+                "operationId": "f4b64bf25516f64b15869218a64d489f",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "OOOm1acm3M"
+                                        },
+                                        "type": {
+                                            "type": "integer",
+                                            "example": 2
+                                        },
+                                        "icon": {
+                                            "type": "string",
+                                            "example": "pictures/fyva_3.jpg"
+                                        },
+                                        "icon_gray": {
+                                            "type": "string",
+                                            "example": null
+                                        },
+                                        "file_icon_name": {
+                                            "type": "string",
+                                            "example": "fyva_3.jpg"
+                                        },
+                                        "file_icon_gray_name": {
+                                            "type": "string",
+                                            "example": null
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Not found Exception 404"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/addPictures": {
+            "post": {
+                "tags": [
+                    "POST"
+                ],
+                "summary": "Add pictures to parameter",
+                "description": "Add pictures to parameter",
+                "operationId": "7b9546d48b10593c68961e239f9766da",
+                "requestBody": {
+                    "content": {
+                        "Illuminate\\Http\\JsonResponse": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "icon": {
+                                        "type": "image"
+                                    },
+                                    "icon_gray": {
+                                        "type": "image|null"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "ok1": {
+                                            "type": "string",
+                                            "example": "picture added"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Not found Exception 404"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Bad request Exception 400"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/updatePictures": {
+            "post": {
+                "tags": [
+                    "POST"
+                ],
+                "summary": "Update pictures to parameter",
+                "description": "Update pictures to parameter",
+                "operationId": "d1b68ad5effbf6a72a79a32685cbeabf",
+                "requestBody": {
+                    "content": {
+                        "Illuminate\\Http\\JsonResponse": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "icon": {
+                                        "type": "image"
+                                    },
+                                    "icon_gray": {
+                                        "type": "image|null"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "ok1": {
+                                            "type": "string",
+                                            "example": "picture icon updated"
+                                        },
+                                        "ok2": {
+                                            "type": "string",
+                                            "example": "picture icon updated and icon_gray empty"
+                                        },
+                                        "ok3": {
+                                            "type": "string",
+                                            "example": "picture icon and icon_gray updated"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Not found Exception 404"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Bad request Exception 400"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/deletePictures/{id}": {
+            "delete": {
+                "tags": [
+                    "DELETE"
+                ],
+                "summary": "{id} - id of parameter",
+                "description": "Delete pictures of parameter",
+                "operationId": "7ca4074ed7405e89b99a41749e8059c8",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "ok": {
+                                            "type": "string",
+                                            "example": "picture icon deleted"
+                                        },
+                                        "ok2": {
+                                            "type": "string",
+                                            "example": "picture icon and icon_gray deleted"
+                                        },
+                                        "ok3": {
+                                            "type": "string",
+                                            "example": "picture icon_gray deleted, icon was empty"
+                                        },
+                                        "ok4": {
+                                            "type": "string",
+                                            "example": "picture icon was empty, icon_gray deleted"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Not found Exception 404"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Bad request Exception 400"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getCustomList": {
+            "get": {
+                "tags": [
+                    "GET"
+                ],
+                "summary": "get all the parameters to which you can load images from list of loaded images",
+                "description": "Get list of custom parameters",
+                "operationId": "3114025998f341682201e7dcbd85840f",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "Illuminate\\Http\\JsonResponse": {
+                                "schema": {
+                                    "properties": {
+                                        "dataEmptyPicturesParameterId": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "integer",
+                                                "example": [
+                                                    1,
+                                                    2,
+                                                    3
+                                                ]
+                                            }
+                                        },
+                                        "dataLoadedPicturesParameter": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "icon": {
+                                                        "type": "string",
+                                                        "example": "pictures/fyva_2.jpg"
+                                                    },
+                                                    "icon_gray": {
+                                                        "type": "string",
+                                                        "example": "pictures/windows-11_2.jpg"
+                                                    },
+                                                    "file_icon_name": {
+                                                        "type": "string",
+                                                        "example": "fyva_2.jpg"
+                                                    },
+                                                    "file_icon_gray_name": {
+                                                        "type": "string",
+                                                        "example": "windows-11_2.jpg"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "GET",
+            "description": "GET"
+        },
+        {
+            "name": "POST",
+            "description": "POST"
+        },
+        {
+            "name": "DELETE",
+            "description": "DELETE"
+        }
+    ]
+}
